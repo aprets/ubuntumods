@@ -11,6 +11,9 @@ cp initramfsEdidHook.sh /etc/initramfs-tools/hooks/edid
 echo "updating initramfs"
 update-initramfs -u -k all
 echo "appending mouse wake disable to rc.local"
+if [ ! -f /etc/rc.local ]; then
+    echo "#!/bin/sh -e" > /etc/rc.local
+fi
 cat disableMouseWake.sh >> /etc/rc.local
 chmod +x /etc/rc.local
 echo "installer done"
