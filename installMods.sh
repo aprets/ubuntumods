@@ -12,4 +12,5 @@ echo "updating initramfs"
 update-initramfs -u -k all
 echo "appending mouse wake disable to rc.local"
 cat disableMouseWake.sh >> /etc/rc.local
+chmod +x /etc/rc.local
 echo "installer done"
