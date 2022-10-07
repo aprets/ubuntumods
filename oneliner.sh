@@ -1,5 +1,5 @@
 cd /tmp
-echo "🪄 making temp memeods directory"
+echo "🪄 making temp memods directory"
 mkdir memods
 cd memods
 echo "📥 downloading the stuff"
