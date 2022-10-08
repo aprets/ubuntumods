@@ -16,4 +16,7 @@ if [ ! -f /etc/rc.local ]; then
 fi
 cat disableMouseWake.sh >> /etc/rc.local
 chmod +x /etc/rc.local
+echo "reducting volume steps to 1"
+# default is 6 as of 22.04
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 echo "installer done"
