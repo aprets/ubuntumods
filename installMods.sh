@@ -18,5 +18,6 @@ cat disableMouseWake.sh >> /etc/rc.local
 chmod +x /etc/rc.local
 echo "reducting volume steps to 1"
 # default is 6 as of 22.04
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
+MUID=$(id -un 1000)
+sudo -u ${MUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${MUID}/bus" gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 echo "installer done"
