@@ -8,7 +8,7 @@ echo "📦 unboxing the stuff"
 unzip main.zip -d main
 cd main/*/
 echo "💿 starting the installer"
-./installMods.sh
+./install_mods.sh
 cd /tmp
 echo "💥 removing the temp dir"
 rm -rf memods
